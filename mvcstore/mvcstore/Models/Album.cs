@@ -4,8 +4,7 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 
 namespace mvcstore.Models
-{
-    [Bind(Exclude = "AlbumId")]
+{    
     public class Album
     {        
         public string Title { get; set; }
