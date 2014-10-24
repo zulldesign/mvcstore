@@ -11,9 +11,9 @@ namespace mvcstore.Controllers
         //
         // GET: /Home/
 
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello From Home";
+            return View();
         }
 
     }
