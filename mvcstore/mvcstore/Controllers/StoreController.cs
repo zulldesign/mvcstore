@@ -17,11 +17,12 @@ namespace mvcstore.Controllers
         }
 
         //
-        // GET: /Store/Browse
+        // GET: /Store/Browse?genre=Disco
 
-        public string Browse()
+        public string Browse(string genre)
         {
-            return "Hello From Store.Browse()";
+            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+            return message;
         }
 
         //
