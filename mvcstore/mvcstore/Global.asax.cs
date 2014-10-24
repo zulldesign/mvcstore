@@ -33,7 +33,7 @@ namespace mvcstore
 
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new MvcMusicStore.Models.SampleData());
+            System.Data.Entity.Database.SetInitializer(new mvcstore.Models.SampleData());
 
             AreaRegistration.RegisterAllAreas();
 
