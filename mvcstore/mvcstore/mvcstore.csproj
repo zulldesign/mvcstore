@@ -108,8 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MvcMusicStore.mdf" />
     <Content Include="App_Data\MvcMusicStore.sdf" />
-    <Content Include="App_Data\mvcstore.sdf" />
+    <Content Include="App_Data\MvcMusicStore_log.ldf" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\placeholder.gif" />
