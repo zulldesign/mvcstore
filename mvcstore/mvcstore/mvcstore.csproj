@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\MvcMusicStore.mdf" />
+    <Content Include="App_Data\MvcMusicStore.sdf" />
     <Content Include="App_Data\MvcMusicStore_log.ldf">
       <DependentUpon>MvcMusicStore.mdf</DependentUpon>
     </Content>
