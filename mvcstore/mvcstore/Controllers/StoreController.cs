@@ -19,7 +19,12 @@ namespace mvcstore.Controllers
 
         public ActionResult Index()
         {
-            var genres = storeDB.Genres.ToList();
+            var genres = new List<Genre> 
+            { 
+                new Genre { Name = "Disco"},
+                new Genre { Name = "Jazz"},
+                new Genre { Name = "Rock"}
+            };
 
             return View(genres);
         }
