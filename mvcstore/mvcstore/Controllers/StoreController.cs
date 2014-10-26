@@ -25,10 +25,7 @@ namespace mvcstore.Controllers
 
         public ActionResult Browse(string genre)
         {
-            // Retrieve Genre and its Associated Albums from database
-            var genreModel = storeDB.Genres.Include("Albums")
-                .Single(g => g.Name == genre);
-
+            var genreModel = new Genre { Name = genre };
             return View(genreModel);
         }
 
@@ -37,8 +34,7 @@ namespace mvcstore.Controllers
 
         public ActionResult Details(int id)
         {
-            var album = storeDB.Albums.Find(id);
-
+            var album = new Album { Title = "Album " + id };
             return View(album);
         }
 
