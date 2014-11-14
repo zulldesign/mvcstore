@@ -143,43 +143,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Album.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Application.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Artist.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Cart.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Genre.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Membership.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Movie.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\MyAppUserFriend.cs" />
     <Compile Include="Models\MyAppUser.cs" />
     <Compile Include="Models\FacebookPicture.cs" />
     <Compile Include="Models\FacebookPhoto.cs" />
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderDetail.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Profile.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Role.cs">
-      <DependentUpon>StoreDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\StoreDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,7 +162,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StoreDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs">
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>StoreDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>StoreDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>StoreDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
       <DependentUpon>StoreDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,353 +4,89 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mvcstore.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="mvcstoreModelsStoreContainer">
-          <EntitySet Name="Album" EntityType="mvcstore.Models.Store.Album" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Applications" EntityType="mvcstore.Models.Store.Applications" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Artist" EntityType="mvcstore.Models.Store.Artist" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Cart" EntityType="mvcstore.Models.Store.Cart" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Genre" EntityType="mvcstore.Models.Store.Genre" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Memberships" EntityType="mvcstore.Models.Store.Memberships" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Movies" EntityType="mvcstore.Models.Store.Movies" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Order" EntityType="mvcstore.Models.Store.Order" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="OrderDetail" EntityType="mvcstore.Models.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Profiles" EntityType="mvcstore.Models.Store.Profiles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Roles" EntityType="mvcstore.Models.Store.Roles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="mvcstore.Models.Store.Users" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UsersInRoles" EntityType="mvcstore.Models.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__Album__ArtistId__276EDEB3" Association="mvcstore.Models.Store.FK__Album__ArtistId__276EDEB3">
-            <End Role="Artist" EntitySet="Artist" />
-            <End Role="Album" EntitySet="Album" />
+      <Schema Namespace="MvcMusicStore.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MvcMusicStoreModelsStoreContainer">
+          <EntitySet Name="UserProfile" EntityType="MvcMusicStore.Models.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="MvcMusicStore.Models.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="MvcMusicStore.Models.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="MvcMusicStore.Models.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="MvcMusicStore.Models.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_RoleId" Association="MvcMusicStore.Models.Store.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="mvcstore.Models.Store.FK__InvoiceLi__Invoi__2F10007B">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Album_Genre" Association="mvcstore.Models.Store.FK_Album_Genre">
-            <End Role="Genre" EntitySet="Genre" />
-            <End Role="Album" EntitySet="Album" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cart_Album" Association="mvcstore.Models.Store.FK_Cart_Album">
-            <End Role="Album" EntitySet="Album" />
-            <End Role="Cart" EntitySet="Cart" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceLine_Album" Association="mvcstore.Models.Store.FK_InvoiceLine_Album">
-            <End Role="Album" EntitySet="Album" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="MembershipApplication" Association="mvcstore.Models.Store.MembershipApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Memberships" EntitySet="Memberships" />
-          </AssociationSet>
-          <AssociationSet Name="MembershipUser" Association="mvcstore.Models.Store.MembershipUser">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Memberships" EntitySet="Memberships" />
-          </AssociationSet>
-          <AssociationSet Name="RoleApplication" Association="mvcstore.Models.Store.RoleApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Roles" EntitySet="Roles" />
-          </AssociationSet>
-          <AssociationSet Name="UserApplication" Association="mvcstore.Models.Store.UserApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="UserProfile" Association="mvcstore.Models.Store.UserProfile">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Profiles" EntitySet="Profiles" />
-          </AssociationSet>
-          <AssociationSet Name="UsersInRoleRole" Association="mvcstore.Models.Store.UsersInRoleRole">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
-          </AssociationSet>
-          <AssociationSet Name="UsersInRoleUser" Association="mvcstore.Models.Store.UsersInRoleUser">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          <AssociationSet Name="fk_UserId" Association="MvcMusicStore.Models.Store.fk_UserId">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Album">
-          <Key>
-            <PropertyRef Name="AlbumId" />
-          </Key>
-          <Property Name="AlbumId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="GenreId" Type="int" Nullable="false" />
-          <Property Name="ArtistId" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="160" />
-          <Property Name="Price" Type="numeric" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="AlbumArtUrl" Type="nvarchar" MaxLength="1024" />
-        </EntityType>
-        <EntityType Name="Applications">
-          <Key>
-            <PropertyRef Name="ApplicationId" />
-          </Key>
-          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="235" />
-          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="256" />
-        </EntityType>
-        <EntityType Name="Artist">
-          <Key>
-            <PropertyRef Name="ArtistId" />
-          </Key>
-          <Property Name="ArtistId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" MaxLength="120" />
-        </EntityType>
-        <EntityType Name="Cart">
-          <Key>
-            <PropertyRef Name="RecordId" />
-          </Key>
-          <Property Name="RecordId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CartId" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="AlbumId" Type="int" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
-          <Property Name="DateCreated" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Genre">
-          <Key>
-            <PropertyRef Name="GenreId" />
-          </Key>
-          <Property Name="GenreId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" MaxLength="120" />
-          <Property Name="Description" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Memberships">
+        <EntityType Name="UserProfile">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
           <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
           <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="Email" Type="nvarchar" MaxLength="256" />
-          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
-          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
-          <Property Name="IsApproved" Type="bit" Nullable="false" />
-          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
-          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
-          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
-          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
-          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
-          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
-          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
-          <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="Movies">
+        <EntityType Name="webpages_OAuthMembership">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="nvarchar(max)" />
-          <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
-          <Property Name="Genre" Type="nvarchar(max)" />
-          <Property Name="Price" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="OrderId" />
-          </Key>
-          <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OrderDate" Type="datetime" Nullable="false" />
-          <Property Name="Username" Type="nvarchar" MaxLength="256" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="160" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="160" />
-          <Property Name="Address" Type="nvarchar" MaxLength="70" />
-          <Property Name="City" Type="nvarchar" MaxLength="40" />
-          <Property Name="State" Type="nvarchar" MaxLength="40" />
-          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="Country" Type="nvarchar" MaxLength="40" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
-          <Property Name="Email" Type="nvarchar" MaxLength="160" />
-          <Property Name="Total" Type="numeric" Nullable="false" Precision="10" Scale="2" />
-        </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="OrderDetailId" />
-          </Key>
-          <Property Name="OrderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OrderId" Type="int" Nullable="false" />
-          <Property Name="AlbumId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="UnitPrice" Type="numeric" Nullable="false" Precision="10" Scale="2" />
-        </EntityType>
-        <EntityType Name="Profiles">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PropertyNames" Type="nvarchar" Nullable="false" />
-          <Property Name="PropertyValueStrings" Type="nvarchar" Nullable="false" />
-          <Property Name="PropertyValueBinary" Type="image" Nullable="false" />
-          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Roles">
+        <EntityType Name="webpages_Roles">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
-          <Property Name="Description" Type="nvarchar" MaxLength="256" />
         </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
-          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="UsersInRoles">
+        <EntityType Name="webpages_UsersInRoles">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Album__ArtistId__276EDEB3">
-          <End Role="Artist" Type="mvcstore.Models.Store.Artist" Multiplicity="1" />
-          <End Role="Album" Type="mvcstore.Models.Store.Album" Multiplicity="*" />
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="MvcMusicStore.Models.Store.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="MvcMusicStore.Models.Store.webpages_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Artist">
-              <PropertyRef Name="ArtistId" />
-            </Principal>
-            <Dependent Role="Album">
-              <PropertyRef Name="ArtistId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__InvoiceLi__Invoi__2F10007B">
-          <End Role="Order" Type="mvcstore.Models.Store.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="mvcstore.Models.Store.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="OrderId" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Album_Genre">
-          <End Role="Genre" Type="mvcstore.Models.Store.Genre" Multiplicity="1" />
-          <End Role="Album" Type="mvcstore.Models.Store.Album" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Genre">
-              <PropertyRef Name="GenreId" />
-            </Principal>
-            <Dependent Role="Album">
-              <PropertyRef Name="GenreId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cart_Album">
-          <End Role="Album" Type="mvcstore.Models.Store.Album" Multiplicity="1" />
-          <End Role="Cart" Type="mvcstore.Models.Store.Cart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Album">
-              <PropertyRef Name="AlbumId" />
-            </Principal>
-            <Dependent Role="Cart">
-              <PropertyRef Name="AlbumId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InvoiceLine_Album">
-          <End Role="Album" Type="mvcstore.Models.Store.Album" Multiplicity="1" />
-          <End Role="OrderDetail" Type="mvcstore.Models.Store.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Album">
-              <PropertyRef Name="AlbumId" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="AlbumId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MembershipApplication">
-          <End Role="Applications" Type="mvcstore.Models.Store.Applications" Multiplicity="1" />
-          <End Role="Memberships" Type="mvcstore.Models.Store.Memberships" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Memberships">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MembershipUser">
-          <End Role="Users" Type="mvcstore.Models.Store.Users" Multiplicity="1" />
-          <End Role="Memberships" Type="mvcstore.Models.Store.Memberships" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Memberships">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="RoleApplication">
-          <End Role="Applications" Type="mvcstore.Models.Store.Applications" Multiplicity="1" />
-          <End Role="Roles" Type="mvcstore.Models.Store.Roles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Roles">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UserApplication">
-          <End Role="Applications" Type="mvcstore.Models.Store.Applications" Multiplicity="1" />
-          <End Role="Users" Type="mvcstore.Models.Store.Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UserProfile">
-          <End Role="Users" Type="mvcstore.Models.Store.Users" Multiplicity="1" />
-          <End Role="Profiles" Type="mvcstore.Models.Store.Profiles" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Profiles">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UsersInRoleRole">
-          <End Role="Roles" Type="mvcstore.Models.Store.Roles" Multiplicity="1" />
-          <End Role="UsersInRoles" Type="mvcstore.Models.Store.UsersInRoles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
+            <Principal Role="webpages_Roles">
               <PropertyRef Name="RoleId" />
             </Principal>
-            <Dependent Role="UsersInRoles">
+            <Dependent Role="webpages_UsersInRoles">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UsersInRoleUser">
-          <End Role="Users" Type="mvcstore.Models.Store.Users" Multiplicity="1" />
-          <End Role="UsersInRoles" Type="mvcstore.Models.Store.UsersInRoles" Multiplicity="*" />
+        <Association Name="fk_UserId">
+          <End Role="UserProfile" Type="MvcMusicStore.Models.Store.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="MvcMusicStore.Models.Store.webpages_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Users">
+            <Principal Role="UserProfile">
               <PropertyRef Name="UserId" />
             </Principal>
-            <Dependent Role="UsersInRoles">
+            <Dependent Role="webpages_UsersInRoles">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -359,504 +95,115 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="mvcstore.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MvcMusicStore.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DefaultConnection" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Albums" EntityType="mvcstore.Models.Album" />
-          <EntitySet Name="Applications" EntityType="mvcstore.Models.Application" />
-          <EntitySet Name="Artists" EntityType="mvcstore.Models.Artist" />
-          <EntitySet Name="Carts" EntityType="mvcstore.Models.Cart" />
-          <EntitySet Name="Genres" EntityType="mvcstore.Models.Genre" />
-          <EntitySet Name="Memberships" EntityType="mvcstore.Models.Membership" />
-          <EntitySet Name="Movies" EntityType="mvcstore.Models.Movie" />
-          <EntitySet Name="Orders" EntityType="mvcstore.Models.Order" />
-          <EntitySet Name="OrderDetails" EntityType="mvcstore.Models.OrderDetail" />
-          <EntitySet Name="Profiles" EntityType="mvcstore.Models.Profile" />
-          <EntitySet Name="Roles" EntityType="mvcstore.Models.Role" />
-          <EntitySet Name="Users" EntityType="mvcstore.Models.User" />
-          <AssociationSet Name="FK__Album__ArtistId__276EDEB3" Association="mvcstore.Models.FK__Album__ArtistId__276EDEB3">
-            <End Role="Artist" EntitySet="Artists" />
-            <End Role="Album" EntitySet="Albums" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Album_Genre" Association="mvcstore.Models.FK_Album_Genre">
-            <End Role="Genre" EntitySet="Genres" />
-            <End Role="Album" EntitySet="Albums" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cart_Album" Association="mvcstore.Models.FK_Cart_Album">
-            <End Role="Album" EntitySet="Albums" />
-            <End Role="Cart" EntitySet="Carts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceLine_Album" Association="mvcstore.Models.FK_InvoiceLine_Album">
-            <End Role="Album" EntitySet="Albums" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="MembershipApplication" Association="mvcstore.Models.MembershipApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Memberships" EntitySet="Memberships" />
-          </AssociationSet>
-          <AssociationSet Name="RoleApplication" Association="mvcstore.Models.RoleApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Roles" EntitySet="Roles" />
-          </AssociationSet>
-          <AssociationSet Name="UserApplication" Association="mvcstore.Models.UserApplication">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="MembershipUser" Association="mvcstore.Models.MembershipUser">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Memberships" EntitySet="Memberships" />
-          </AssociationSet>
-          <AssociationSet Name="FK__InvoiceLi__Invoi__2F10007B" Association="mvcstore.Models.FK__InvoiceLi__Invoi__2F10007B">
-            <End Role="Order" EntitySet="Orders" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="UserProfile" Association="mvcstore.Models.UserProfile">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Profiles" EntitySet="Profiles" />
-          </AssociationSet>
-          <AssociationSet Name="UsersInRoles" Association="mvcstore.Models.UsersInRoles">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Users" EntitySet="Users" />
+          <EntitySet Name="UserProfiles" EntityType="MvcMusicStore.Models.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="MvcMusicStore.Models.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="MvcMusicStore.Models.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="MvcMusicStore.Models.webpages_Roles" />
+          <AssociationSet Name="webpages_UsersInRoles" Association="MvcMusicStore.Models.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Album">
-          <Key>
-            <PropertyRef Name="AlbumId" />
-          </Key>
-          <Property Name="AlbumId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="GenreId" Type="Int32" Nullable="false" />
-          <Property Name="ArtistId" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="160" Unicode="true" FixedLength="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <Property Name="AlbumArtUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Artist" Relationship="mvcstore.Models.FK__Album__ArtistId__276EDEB3" FromRole="Album" ToRole="Artist" />
-          <NavigationProperty Name="Genre" Relationship="mvcstore.Models.FK_Album_Genre" FromRole="Album" ToRole="Genre" />
-          <NavigationProperty Name="Carts" Relationship="mvcstore.Models.FK_Cart_Album" FromRole="Album" ToRole="Cart" />
-          <NavigationProperty Name="OrderDetails" Relationship="mvcstore.Models.FK_InvoiceLine_Album" FromRole="Album" ToRole="OrderDetail" />
-        </EntityType>
-        <EntityType Name="Application">
-          <Key>
-            <PropertyRef Name="ApplicationId" />
-          </Key>
-          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" Unicode="true" FixedLength="false" />
-          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Memberships" Relationship="mvcstore.Models.MembershipApplication" FromRole="Applications" ToRole="Memberships" />
-          <NavigationProperty Name="Roles" Relationship="mvcstore.Models.RoleApplication" FromRole="Applications" ToRole="Roles" />
-          <NavigationProperty Name="Users" Relationship="mvcstore.Models.UserApplication" FromRole="Applications" ToRole="Users" />
-        </EntityType>
-        <EntityType Name="Artist">
-          <Key>
-            <PropertyRef Name="ArtistId" />
-          </Key>
-          <Property Name="ArtistId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Albums" Relationship="mvcstore.Models.FK__Album__ArtistId__276EDEB3" FromRole="Artist" ToRole="Album" />
-        </EntityType>
-        <EntityType Name="Cart">
-          <Key>
-            <PropertyRef Name="RecordId" />
-          </Key>
-          <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="CartId" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="AlbumId" Type="Int32" Nullable="false" />
-          <Property Name="Count" Type="Int32" Nullable="false" />
-          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Album" Relationship="mvcstore.Models.FK_Cart_Album" FromRole="Cart" ToRole="Album" />
-        </EntityType>
-        <EntityType Name="Genre">
-          <Key>
-            <PropertyRef Name="GenreId" />
-          </Key>
-          <Property Name="GenreId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Albums" Relationship="mvcstore.Models.FK_Album_Genre" FromRole="Genre" ToRole="Album" />
-        </EntityType>
-        <EntityType Name="Membership">
+        <EntityType Name="UserProfile">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="webpages_Roles" Relationship="MvcMusicStore.Models.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
           <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
-          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
-          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Application" Relationship="mvcstore.Models.MembershipApplication" FromRole="Memberships" ToRole="Applications" />
-          <NavigationProperty Name="User" Relationship="mvcstore.Models.MembershipUser" FromRole="Memberships" ToRole="Users" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="Movie">
+        <EntityType Name="webpages_OAuthMembership">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Genre" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="OrderId" />
-          </Key>
-          <Property Name="OrderId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Username" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="FirstName" Type="String" MaxLength="160" Unicode="true" FixedLength="false" />
-          <Property Name="LastName" Type="String" MaxLength="160" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="70" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
-          <Property Name="State" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="160" Unicode="true" FixedLength="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <NavigationProperty Name="OrderDetails" Relationship="mvcstore.Models.FK__InvoiceLi__Invoi__2F10007B" FromRole="Order" ToRole="OrderDetail" />
-        </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="OrderDetailId" />
-          </Key>
-          <Property Name="OrderDetailId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderId" Type="Int32" Nullable="false" />
-          <Property Name="AlbumId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-          <NavigationProperty Name="Album" Relationship="mvcstore.Models.FK_InvoiceLine_Album" FromRole="OrderDetail" ToRole="Album" />
-          <NavigationProperty Name="Order" Relationship="mvcstore.Models.FK__InvoiceLi__Invoi__2F10007B" FromRole="OrderDetail" ToRole="Order" />
-        </EntityType>
-        <EntityType Name="Profile">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="UserId" Type="Guid" Nullable="false" />
-          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
-          <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
-          <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="User" Relationship="mvcstore.Models.UserProfile" FromRole="Profiles" ToRole="Users" />
-        </EntityType>
-        <EntityType Name="Role">
+        <EntityType Name="webpages_Roles">
           <Key>
             <PropertyRef Name="RoleId" />
           </Key>
-          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Application" Relationship="mvcstore.Models.RoleApplication" FromRole="Roles" ToRole="Applications" />
-          <NavigationProperty Name="Users" Relationship="mvcstore.Models.UsersInRoles" FromRole="Roles" ToRole="Users" />
+          <NavigationProperty Name="UserProfiles" Relationship="MvcMusicStore.Models.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
         </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
-          <Property Name="UserId" Type="Guid" Nullable="false" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
-          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Application" Relationship="mvcstore.Models.UserApplication" FromRole="Users" ToRole="Applications" />
-          <NavigationProperty Name="Membership" Relationship="mvcstore.Models.MembershipUser" FromRole="Users" ToRole="Memberships" />
-          <NavigationProperty Name="Profile" Relationship="mvcstore.Models.UserProfile" FromRole="Users" ToRole="Profiles" />
-          <NavigationProperty Name="Roles" Relationship="mvcstore.Models.UsersInRoles" FromRole="Users" ToRole="Roles" />
-        </EntityType>
-        <Association Name="FK__Album__ArtistId__276EDEB3">
-          <End Role="Artist" Type="mvcstore.Models.Artist" Multiplicity="1" />
-          <End Role="Album" Type="mvcstore.Models.Album" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Artist">
-              <PropertyRef Name="ArtistId" />
-            </Principal>
-            <Dependent Role="Album">
-              <PropertyRef Name="ArtistId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Album_Genre">
-          <End Role="Genre" Type="mvcstore.Models.Genre" Multiplicity="1" />
-          <End Role="Album" Type="mvcstore.Models.Album" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Genre">
-              <PropertyRef Name="GenreId" />
-            </Principal>
-            <Dependent Role="Album">
-              <PropertyRef Name="GenreId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cart_Album">
-          <End Role="Album" Type="mvcstore.Models.Album" Multiplicity="1" />
-          <End Role="Cart" Type="mvcstore.Models.Cart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Album">
-              <PropertyRef Name="AlbumId" />
-            </Principal>
-            <Dependent Role="Cart">
-              <PropertyRef Name="AlbumId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InvoiceLine_Album">
-          <End Role="Album" Type="mvcstore.Models.Album" Multiplicity="1" />
-          <End Role="OrderDetail" Type="mvcstore.Models.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Album">
-              <PropertyRef Name="AlbumId" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="AlbumId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MembershipApplication">
-          <End Role="Applications" Type="mvcstore.Models.Application" Multiplicity="1" />
-          <End Role="Memberships" Type="mvcstore.Models.Membership" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Memberships">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="RoleApplication">
-          <End Role="Applications" Type="mvcstore.Models.Application" Multiplicity="1" />
-          <End Role="Roles" Type="mvcstore.Models.Role" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Roles">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UserApplication">
-          <End Role="Applications" Type="mvcstore.Models.Application" Multiplicity="1" />
-          <End Role="Users" Type="mvcstore.Models.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="ApplicationId" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="ApplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MembershipUser">
-          <End Role="Users" Type="mvcstore.Models.User" Multiplicity="1" />
-          <End Role="Memberships" Type="mvcstore.Models.Membership" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Memberships">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__InvoiceLi__Invoi__2F10007B">
-          <End Role="Order" Type="mvcstore.Models.Order" Multiplicity="1" />
-          <End Role="OrderDetail" Type="mvcstore.Models.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="OrderId" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UserProfile">
-          <End Role="Users" Type="mvcstore.Models.User" Multiplicity="1" />
-          <End Role="Profiles" Type="mvcstore.Models.Profile" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="Profiles">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UsersInRoles">
-          <End Role="Roles" Type="mvcstore.Models.Role" Multiplicity="*" />
-          <End Role="Users" Type="mvcstore.Models.User" Multiplicity="*" />
+        <Association Name="webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="MvcMusicStore.Models.webpages_Roles" Multiplicity="*" />
+          <End Role="UserProfile" Type="MvcMusicStore.Models.UserProfile" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mvcstoreModelsStoreContainer" CdmEntityContainer="DefaultConnection">
-          <EntitySetMapping Name="Albums">
-            <EntityTypeMapping TypeName="mvcstore.Models.Album">
-              <MappingFragment StoreEntitySet="Album">
-                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
-                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
-                <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="AlbumArtUrl" ColumnName="AlbumArtUrl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Applications">
-            <EntityTypeMapping TypeName="mvcstore.Models.Application">
-              <MappingFragment StoreEntitySet="Applications">
-                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Artists">
-            <EntityTypeMapping TypeName="mvcstore.Models.Artist">
-              <MappingFragment StoreEntitySet="Artist">
-                <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Carts">
-            <EntityTypeMapping TypeName="mvcstore.Models.Cart">
-              <MappingFragment StoreEntitySet="Cart">
-                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
-                <ScalarProperty Name="CartId" ColumnName="CartId" />
-                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Genres">
-            <EntityTypeMapping TypeName="mvcstore.Models.Genre">
-              <MappingFragment StoreEntitySet="Genre">
-                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Memberships">
-            <EntityTypeMapping TypeName="mvcstore.Models.Membership">
-              <MappingFragment StoreEntitySet="Memberships">
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
-                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
-                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
-                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
-                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
-                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Movies">
-            <EntityTypeMapping TypeName="mvcstore.Models.Movie">
-              <MappingFragment StoreEntitySet="Movies">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
-                <ScalarProperty Name="Genre" ColumnName="Genre" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="mvcstore.Models.Order">
-              <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="Country" ColumnName="Country" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="mvcstore.Models.OrderDetail">
-              <MappingFragment StoreEntitySet="OrderDetail">
-                <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Profiles">
-            <EntityTypeMapping TypeName="mvcstore.Models.Profile">
-              <MappingFragment StoreEntitySet="Profiles">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
-                <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
-                <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="mvcstore.Models.Role">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="mvcstore.Models.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        <EntityContainerMapping StorageEntityContainer="MvcMusicStoreModelsStoreContainer" CdmEntityContainer="DefaultConnection">
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="MvcMusicStore.Models.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
-                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="UsersInRoles" TypeName="mvcstore.Models.UsersInRoles" StoreEntitySet="UsersInRoles">
-            <EndProperty Name="Roles">
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="MvcMusicStore.Models.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="MvcMusicStore.Models.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="MvcMusicStore.Models.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="MvcMusicStore.Models.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="webpages_Roles">
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
-            <EndProperty Name="Users">
+            <EndProperty Name="UserProfile">
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
